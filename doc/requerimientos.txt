@@ -1,0 +1,20 @@
+Webapp Checador
+===============
+Registrar entradas y salidas de nuestros robots.
+
+
+Requerimientos
+--------------
+- Cálculo de horas laboradas por periodo
+- Lista de días asistidos
+- Control de retardos
+- Definición de horarios laborales
+- Bono de puntualidad
+- Control de faltas. A la tercera Bye!
+- Horas extras
+- Definición de horario de comida
+- Roles (talves)
+- Administrar lista de robots
+- Permisos
+- Primas vacacionales
+- Notificaciones
