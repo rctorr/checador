@@ -1,0 +1,280 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+/*    background: #192988;*/
+    background: #06104b;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+/*---------------------------------------------------------------------------*/
+div#pagina {
+    width: 960px;
+    margin: 50px auto;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.62);
+    box-shadow: 10px 10px 5px rgba(2, 2, 2, 0.78);
+    border-radius: 5px;
+
+}
+div#fondo {
+    position: relative;
+    float: left;
+    background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 0), rgba(54, 73, 214));
+    background: -moz-linear-gradient(to top, rgba(255, 255, 255, 0), rgba(54, 73, 214));
+    background: -o-linear-gradient(to top, rgba(255, 255, 255, 0), rgba(54, 73, 214));
+    background: -ms-linear-gradient(to top, rgba(255, 255, 255, 0), rgba(54, 73, 214));
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgb(54, 73, 214));
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+/*----------------------------Cuadros------------------------*/
+.cuadros {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius:4px;
+    margin: 6px;
+    margin-top: 3px;
+    padding: 0;
+    vertical-align: top;
+    background-color: #000;
+}
+
+div.cuadros:hover {
+  background-color: #ff6200;
+}
+
+div.trans20 {
+    background-color: #34b4db;
+    box-shadow: 0.5px 0.5px 0px #222;
+
+}
+
+div.trans40 {
+    background-color: #c3d9ef;
+    box-shadow: 0.5px 0.5px 0px #222;
+}
+
+div.trans60 {
+    background-color: #4252af;
+    box-shadow: 0.5px 0.5px 0px #222;
+}
+div.trans80 {
+  background-color: #06104b;
+
+}
+div.trans100 {
+  background-color: #000836;
+}
+/*-------------------------encabezado---------------------------------*/
+header {
+    width: 960px;
+    height: auto;
+    margin: 0px auto;
+    padding-bottom: 40px;
+    padding-top: 25px;
+/*    border-bottom: 1px solid #fff;*/
+    background-color: #00083b;
+    border-radius: 5px 5px 0px 0px;
+
+
+}
+
+h1 {
+    color:#fff;
+    font-size: 46px;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1px rgba(2, 2, 2, 0.64);
+    margin-bottom: 8px;
+}
+p{
+    color:#fff;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+
+/*--------------------------section-------------------------------------*/
+
+section#contenedor {
+    width: 960px;
+    height: 330px;
+    position: relative;
+
+}
+
+article {
+    width: 445px;
+    height: auto;
+    margin: 0px auto;
+    position: absolute;
+    top: 0px;
+    margin-top: 80px;
+    margin-left: 60px;
+
+
+}
+/*-----------------REGISTRO-------------------*/
+
+aside#registro {
+    width: 300px;
+    height: auto;
+    margin: 0px auto;
+    position: absolute;
+    left: 470px;
+    margin-top: 45px;
+}
+
+#form-header{
+     color: #000;
+    font-family: "lato", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+     text-align: center;
+     margin: 0px auto;
+    padding-bottom: 20px;
+}
+
+#mensaje{
+    color: #000;
+    font-family: "lato", sans-serif;
+    font-weight: 900 bold;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: auto;
+
+}
+#form-footer{
+    color: #000;
+    font-family: "lato", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    margin: 0px auto;
+    padding-bottom: 20px;
+}
+/*-----------------USUARIO CONTRASEÑA-------------------*/
+
+.input {
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+    height: 45px;
+    color: #ff6200;
+    text-align: center;
+    border-radius: 5px;
+}
+.input span {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-size: 20px;
+    color: #ff6200;
+    opacity: 1;
+}
+.input input {
+    width: 250px;
+    padding: 10px 5px 10px 40px;
+    display: block;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+    color: #ff6200;
+}
+.input input:focus {
+    padding: 10px 5px 10px 10px;
+    outline: 0;
+    border-color: #ff6200;
+}
+
+/*--------------------------botones-------------------------------------*/
+button {
+    display: inline-block;
+    border-radius: 2px;
+    border: none;
+    height: 45px;
+    width: 290px;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #ff6200;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+button:hover {
+    background: #06104b;
+    color: #fff;
+}
+
+/*--------------------------footer-------------------------------------*/
+footer{
+    width: 960px;
+    height: 40px;
+    padding-top: 10px;
+    border-top: 1px solid #fff;
+    border-radius: 0px 0px 5px 5px;
+/*    background-color: #ff6200;*/
+}
+footer p{
+    color: #000;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+/*---------------------------------------------------------------------------
+Inicia propiedades para diseño responsivo
+(tiene que ir al final o después de todos los estilos ya definidos)
+-----------------------------------------------------------------------------*/
+
+/* Estilos para smartphones */
+@media screen and (max-width: 384px) {
+    header {
+        width: 384px;
+        padding-bottom: 5px;
+        padding-top: 10px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    div#pagina {
+        margin-top: 0px;
+        width: 384px;
+        }
+    article#logo {
+        display: none;
+    }
+    aside#registro {
+        left: 42px;
+        margin-top: 5px;
+    }
+    footer {
+        width: 384px;
+    }
+}
