@@ -1,0 +1,33 @@
+        <article id="logo">
+            <img src="img/logo.png">
+        </article>
+
+        <aside id="registro">
+            <div id="form-header">Registra tu Asistencia</div>
+                <form action="index.php" method="get">
+                    <div class="input">
+                        <input type="text" name="user" placeholder="Usuario" required />
+                        <span><i class="fa fa-user"></i></span>
+                    </div>
+                       <div class="input">
+                        <input type="password" name="pass" placeholder="Contraseña" required />
+                           <span><i class="fa fa-lock"></i></span>
+                    </div>
+                    <div id="mensaje"><strong>Lorem Ipsum</strong></div>
+                    <button type="submit">Registro</button>
+                    <div id="form-footer">Gracias</div>
+                </form>
+
+        </aside>
+        <script>
+            $(".input").focusin(function() {
+                $(this).find("span").animate({
+                    "opacity": "0"
+                }, 200);
+            });
+            $(".input").focusout(function() {
+                $(this).find("span").animate({
+                    "opacity": "1"
+                }, 300);
+            });
+        </script>
