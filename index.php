@@ -33,11 +33,24 @@
         /* intrucciones en lenguaje SQL para hacer la consulta a la BD de
            forma segura, sin permitir hackeo de la bd */
         $sql = "SELECT usuario, password from Usuario where usuario = '$user' and password = '$pass'";
-        echo $sql;
+        /* echo $sql; */
         /* Para ejecutar la consulta y lo resultado están en la variable $result */
         $result = mysqli_query($conn, $sql);
 
-        echo "Número de renglones resultado de la consulta:" . mysqli_num_rows($result);
+        /* $numrows tiene el número de reglones regrwesados por la consulta del
+           SELECT, si es igual a 1, entonces el user y pass son válidos, si es 0
+           son inválido ya sea el user o el pass o ambos. */
+        $numrows = mysqli_num_rows($result);
+
+        /* Tareas a realizar cuando el user y pass son válidos */
+        if($numrows == 1) {
+            $fecha = date("d/m/Y");
+            $fechadb = date("Y/m/d");
+            $hora = date("h:i");
+            /* Necesitamos guardar la información enla BD */
+            $sql = "INSERT INTO checador.Registro (fecha, usuario, hrEntrada, hrSalida, id) VALUES ('$fechadb', '$user', '$hora', '', NULL)";
+            $result = mysqli_query($conn, $sql);
+        }
 
         /* Se recomienda siempre cerrar la BD al final después de que ya no se usa */
         mysqli_close($conn);
@@ -52,9 +65,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
     <div id="fondo">
@@ -81,7 +94,24 @@
 
     <section id="contenedor">
         <?php
-            include("login.html");
+            /* Cuando se debe incluir login.html */
+            if(!isset($_GET['user'])) {
+                /* Cuando se entra el sistema por primera ves entramos acá */
+                include("login.html");
+            } else {
+                /* Acá hacemos algo cuando el usuario ya pasó del login */
+
+                /* Ahora definimos cuando mostrar entrada.html */
+                if($numrows == 1) {
+                    /* Llegamos aquí cuando el usuario dió user y pass correctos */
+                    include("entrada.html");
+                } else {
+                    /* Llegamos aquí cuando el user y/o pass son incorrectos */
+                    include("login-invalido.html");
+                }
+            }
+
+
         ?>
     </section>
 

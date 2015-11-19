@@ -248,6 +248,35 @@ footer p{
 
 }
 
+/*-----------------ENTRADA-------------------*/
+
+aside#entrada, aside#invalido {
+    width: 300px;
+    height: auto;
+    margin: 0px auto;
+    position: absolute;
+    left: 470px;
+    margin-top: 45px;
+}
+
+aside#entrada div, aside#invalido div {
+    margin: 10px auto;
+}
+
+aside#entrada p, aside#invalido p {
+    text-align: left;
+    color: #000;
+    margin: 5px auto;
+}
+
+aside#invalido a {
+    display: inline-block;
+    padding: 5px;
+    background-color: #ffff00;
+    margin: 5px;
+    text-decoration: none;
+}
+
 /*---------------------------------------------------------------------------
 Inicia propiedades para diseño responsivo
 (tiene que ir al final o después de todos los estilos ya definidos)
