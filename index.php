@@ -48,8 +48,26 @@
             $fechadb = date("Y/m/d");
             $hora = date("h:i");
             /* Necesitamos guardar la información enla BD */
-            $sql = "INSERT INTO checador.Registro (fecha, usuario, hrEntrada, hrSalida, id) VALUES ('$fechadb', '$user', '$hora', '', NULL)";
+
+            /* Necesitamos saber si la hora y fecha son para entrada o salida */
+            $sql = "SELECT * FROM Registro WHERE usuario='$user' and hrSalida='00:00:00' order by id desc limit 1";
             $result = mysqli_query($conn, $sql);
+            /* $nrSalida tenemos el número de renglones del resultado de la consulta para saber si es hora de entrada o salida */
+            $nrSalida = mysqli_num_rows($result);
+        //    echo "Número de renglones hrSalida: ".$nrSalida;
+
+            /* Si $nrSalida == 0 que la hora de registro es de entrada, si $nrSalida == 1 entonces el registro es de salida */
+            if($nrSalida == 0) {
+                /* Esto es para hrEntrada */
+                $sql = "INSERT INTO checador.Registro (fecha, usuario, hrEntrada, hrSalida, id) VALUES ('$fechadb', '$user', '$hora', '', NULL)";
+                $result = mysqli_query($conn, $sql);
+            } else {
+                /* Esto es para hrSalida */
+                $sql = "UPDATE  `checador`.`Registro` SET  `hrSalida` =  '$hora' WHERE  `Registro`.`usuario`='$user' and hrSalida='00:00:00'";
+                $result = mysqli_query($conn, $sql);
+            //    echo $sql."<br/>";
+            //    echo "Mi result= ".$result;
+            }
         }
 
         /* Se recomienda siempre cerrar la BD al final después de que ya no se usa */
@@ -104,7 +122,13 @@
                 /* Ahora definimos cuando mostrar entrada.html */
                 if($numrows == 1) {
                     /* Llegamos aquí cuando el usuario dió user y pass correctos */
-                    include("entrada.html");
+                    if($nrSalida==0) {
+                        /* Cuando se realiza una entrada */
+                        include("entrada.html");
+                    } else {
+                        /* Cuando se realiza una salida */
+                        include("salida.html");
+                    }
                 } else {
                     /* Llegamos aquí cuando el user y/o pass son incorrectos */
                     include("login-invalido.html");
